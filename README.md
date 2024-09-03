@@ -5,33 +5,9 @@ restart-wifi.sh
 
 I use this script because netctl is kinda annoying to use otherwise.
 
-### Change Wifi Device state
-
-
-I've been turning off my wifi device using `ip` as follows:
-
-```
-ip link set wlp58s0 down
-```
-
-where `wlp58s0` is my wifi device.
-
 ### Use
 
-To use set the first parameter to a wifi name with a configuration already set and placed in `/etc/netctl`
-
-e.g.
-
-```
-$ sudo cat /etc/netctl/cplwifi
-[sudo] password for sahal:
-Description='Automatically generated profile by wifi-menu'
-Interface=wlp58s0
-Connection=wireless
-Security=none
-ESSID=CPLWIFI
-IP=dhcp
-```
+To use set the first parameter to a wifi name with a configuration already set and placed in `/etc/netctl`.
 
 ### Take an interface down
 
@@ -46,6 +22,18 @@ $ INTERFACE_NAME=wlp58s0 restart-wifi.sh down
 ```
 
 ### Connect to a pre-configured wifi-name
+
+e.g. pre-configured wifi-name
+```
+$ sudo cat /etc/netctl/cplwifi
+[sudo] password for sahal:
+Description='Automatically generated profile by wifi-menu'
+Interface=wlp58s0
+Connection=wireless
+Security=none
+ESSID=CPLWIFI
+IP=dhcp
+```
 
 ```
 $ restart-wifi.sh cplwifi
