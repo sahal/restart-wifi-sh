@@ -9,6 +9,8 @@ if [[ "${INTERFACE_NAME:-unset}" == "unset" ]]; then
   INTERFACE_NAME="wlp58s0"
 fi
 
+echo "WIFI_NAME: ${WIFI_NAME}, INTERFACE_NAME: ${INTERFACE_NAME}"
+
 case "${WIFI_NAME}" in
 
   down)
