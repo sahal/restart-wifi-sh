@@ -47,7 +47,7 @@ case "${WIFI_NAME}" in
   # MmmMM, parameter expansion
   unset|help)
 
-    echo "$0 [help|unset|down|menu|list|<wifi name>]"
+    echo "${0##*/} [help|unset|down|menu|list|<wifi name>]"
     echo
     echo "Set a wifi name as the first positional parameter"
     echo
