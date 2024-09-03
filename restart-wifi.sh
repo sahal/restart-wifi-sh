@@ -44,12 +44,21 @@ case "${WIFI_NAME}" in
 
   ;;
 
-  unset)
+  # MmmMM, parameter expansion
+  unset|help)
 
-    if [[ "${WIFI_NAME}" == "unset" ]]; then
-      echo "Set a wifi name as the first positional parameter"
-      exit 1
-    fi
+    echo "$0 [help|unset|down|menu|list|<wifi name>]"
+    echo
+    echo "Set a wifi name as the first positional parameter"
+    echo
+    echo "Special wifi names include menu, down and list."
+    echo "-----------------------------------------------"
+    echo "menu: run 'wifi-menu'"
+    echo "down: shut down interface \${INTERFACE_NAME}"
+    echo "list: list config files in /etc/netctl"
+    echo
+    echo
+    exit 1
 
   ;;
 
