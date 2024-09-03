@@ -1,6 +1,8 @@
 restart-wifi.sh
 ---
 
+(Formerly at this gist: https://gist.github.com/sahal/78eaa73d07ac74de3aa22a889f90fe71)
+
 I use this script because netctl is kinda annoying to use otherwise.
 
 ### Change Wifi Device state
