@@ -13,6 +13,16 @@ echo "WIFI_NAME: ${WIFI_NAME}, INTERFACE_NAME: ${INTERFACE_NAME}"
 
 case "${WIFI_NAME}" in
 
+  up)
+
+    echo "Provided WIFI_NAME was 'up.' Instead of connecting, I will
+    bring the wifi interface up."
+    echo
+    sudo ip link set "${INTERFACE_NAME}" up
+    echo
+    ip a | grep "${INTERFACE_NAME}"
+
+    ;;
   down)
 
     echo "Provided WIFI_NAME was 'down.' Instead of connecting, I will
@@ -30,6 +40,15 @@ case "${WIFI_NAME}" in
     list the available netctl configs."
     echo
     find /etc/netctl -maxdepth 1 -type f | sed s@/.*/@@|sort | less
+
+  ;;
+
+  show)
+
+  echo "Provided WIFI_NAME was 'show.' Instead of connecting, I will
+  show the interface ip addr."
+  echo
+  watch "ip a show ${INTERFACE_NAME}"
 
   ;;
 
@@ -74,7 +93,7 @@ case "${WIFI_NAME}" in
 
     sudo systemctl status "netctl@${WIFI_NAME}.service"
 
-    watch 'ip a'
+    watch "ip a show ${INTERFACE_NAME}"
   ;;
 
 esac
