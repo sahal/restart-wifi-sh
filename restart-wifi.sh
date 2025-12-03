@@ -23,6 +23,7 @@ case "${WIFI_NAME}" in
     ip a | grep "${INTERFACE_NAME}"
 
     ;;
+
   down)
 
     echo "Provided WIFI_NAME was 'down.' Instead of connecting, I will
@@ -66,7 +67,7 @@ case "${WIFI_NAME}" in
   # MmmMM, parameter expansion
   unset|help)
 
-    echo "${0##*/} [help|unset|down|menu|list|<wifi name>]"
+    echo "${0##*/} [help|unset|up|show|down|menu|list|<wifi name>]"
     echo
     echo "Set a wifi name as the first positional parameter"
     echo
@@ -74,6 +75,8 @@ case "${WIFI_NAME}" in
     echo "-----------------------------------------------"
     echo "menu: run 'wifi-menu'"
     echo "down: shut down interface \${INTERFACE_NAME}"
+    echo "up:   bring up interface \${INTERFACE_NAME}"
+    echo "show: show addr of \${INTERFACE_NAME}"
     echo "list: list config files in /etc/netctl"
     echo
     echo
