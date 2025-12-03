@@ -69,9 +69,10 @@ case "${WIFI_NAME}" in
 
     echo "${0##*/} [help|unset|up|show|down|menu|list|<wifi name>]"
     echo
+    echo "<wifi name>: connect to existing wifi name (netctl) config."
     echo "Set a wifi name as the first positional parameter"
     echo
-    echo "Special wifi names include menu, down and list."
+    echo "Special wifi names include menu, up, down, show, and list."
     echo "-----------------------------------------------"
     echo "menu: run 'wifi-menu'"
     echo "down: shut down interface \${INTERFACE_NAME}"
